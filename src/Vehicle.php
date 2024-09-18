@@ -1,6 +1,6 @@
 <?php
-ini_set('declare(strict_types', '1'); 
-namespace App;
+declare(strict_types=1); 
+namespace iPsyco;
 
 abstract class Vehicle
 {
@@ -16,4 +16,14 @@ abstract class Vehicle
     }
 
     abstract public function move(): void;
+
+    public function setSpeed(float $speed): void
+    {
+        $this->speed = $speed;
+    }
+    
+    public function getModel(): string
+    {
+        return $this->model;
+    }
 }

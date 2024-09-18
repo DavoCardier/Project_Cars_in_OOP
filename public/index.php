@@ -1,13 +1,12 @@
 <?php
-ini_set('declare(strict_types', '1'); 
-namespace App;
+declare(strict_types=1);
 
-require '..vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-use App\VehicularTraffic;
-use App\Bus;
-use App\Tesla;
-use App\SportCar;
+use iPsyco\VehicularTraffic;
+use iPsyco\Bus;
+use iPsyco\Tesla;
+use iPsyco\SportCar;
 
 $manager = new VehicularTraffic();
 
@@ -18,3 +17,11 @@ $sportCar = new SportCar("Camaro", "ZR1");
 $manager->addVehicle($bus);
 $manager->addVehicle($tesla);
 $manager->addVehicle($sportCar);
+
+echo "Starting all vehicles at 120 km/h:\n";
+$manager->startMovingAllVehicles(120);
+
+echo "\nElectric vehicles:\n";   //Investigacion
+foreach ($manager->getElectricVehicles() as $vehicle) {
+    echo $vehicle->getModel() . " is moving electrically\n";
+}

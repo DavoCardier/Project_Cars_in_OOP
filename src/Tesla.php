@@ -1,8 +1,8 @@
 <?php 
-ini_set('declare(strict_types', '1'); 
-namespace App;
+declare(strict_types=1); 
+namespace iPsyco;
 
-use App\Vehicle;
+use iPsyco\Vehicle;
 
 class Tesla extends Vehicle
 {
@@ -19,7 +19,7 @@ class Tesla extends Vehicle
         if ($this->isCharged) {
             echo "The Tesla is moving electrically with a speed of $this->speed km/h.\n";
         } else $this->ischange = False; {
-            echo ("Tesla needs to be charged first.");
+            echo "Tesla needs to be charged first.";
         }
     }
 }

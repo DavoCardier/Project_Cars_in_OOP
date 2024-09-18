@@ -1,10 +1,10 @@
 <?php 
-ini_set('declare(strict_types', '1'); 
-namespace App;
+declare(strict_types=1);
+namespace iPsyco;
 
-use App\Bus;
-use App\Tesla;
-use App\SportCar;
+use iPsyco\Bus;
+use iPsyco\Tesla;
+use iPsyco\SportCar;
 
 class VehicularTraffic
 {
@@ -12,7 +12,7 @@ class VehicularTraffic
 
     public function addVehicle(Vehicle $vehicle): void
     {
-        $this->vehicles []= $vehicle;
+        $this->vehicles[] = $vehicle;
     }
 
     public function startMovingAllVehicles(int $speed): void
@@ -21,5 +21,10 @@ class VehicularTraffic
             $vehicle->setSpeed($speed);
             $vehicle->move();
         }
+    }
+
+    public function getElectricVehicles(): array  // Research = Investigacion 
+    {
+        return array_filter($this->vehicles, fn($v) => $v instanceof Tesla);
     }
 }
