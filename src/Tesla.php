@@ -1,24 +1,37 @@
 <?php 
 declare(strict_types=1); 
-namespace iPsyco;
+namespace Psyco;
 
-use iPsyco\Vehicle;
+use Psyco\Vehicle;
 
-class Tesla extends Vehicle
+interface InterfaceTesla
 {
-    private bool $isCharged = false;
+    public function charge(): bool;
+    public function move(): void;
+}
 
-    public function charge(): void
+class Tesla extends Vehicle implements InterfaceTesla
+{
+    public bool $isCharge = false;
+
+    function __constructo(): bool
+    { 
+        $this->isCharged = rand(1,0) > 0;
+    }
+      public function charge(): bool
     {
-        $this->isCharged = true;
-        echo "Tesla charged successfully!\n";
+        if ($this->isCharged = false) {
+            echo "Tesla charged successfully!\n";
+        } else {
+            echo "Tesla needs to be charged first.";
+         }
     }
 
     public function move(): void
     {
-        if ($this->isCharged) {
+        if ($this->isCharged = 1) {
             echo "The Tesla is moving electrically with a speed of $this->speed km/h.\n";
-        } else $this->ischange = False; {
+        } else $this->ischange = 0; {
             echo "Tesla needs to be charged first.";
         }
     }

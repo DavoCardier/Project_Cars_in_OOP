@@ -1,14 +1,19 @@
 <?php 
 declare(strict_types=1);
-namespace iPsyco;
+namespace Psyco;
 
-use iPsyco\Bus;
-use iPsyco\Tesla;
-use iPsyco\SportCar;
+use Psyco\Bus;
+use Psyco\Tesla;
+use Psyco\SportCar;
 
 class VehicularTraffic
 {
-    private array $vehicles = [];
+    private array $vehicles;
+
+    public function __construct()
+    {
+        $this->vehicles = [];
+    }
 
     public function addVehicle(Vehicle $vehicle): void
     {
@@ -23,7 +28,7 @@ class VehicularTraffic
         }
     }
 
-    public function getElectricVehicles(): array  // Research = Investigacion 
+    public function getElectricVehicles(): array  // Research = Investigacion // Array con version vieja. 
     {
         return array_filter($this->vehicles, fn($v) => $v instanceof Tesla);
     }

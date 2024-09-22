@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1); 
-namespace iPsyco;
+namespace Psyco;
 
-use iPsyco\Vehicle;
+use Psyco\Vehicle; 
 
 class SportCar extends Vehicle
 {

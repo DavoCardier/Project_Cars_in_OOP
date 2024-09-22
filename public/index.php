@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use iPsyco\VehicularTraffic;
-use iPsyco\Bus;
-use iPsyco\Tesla;
-use iPsyco\SportCar;
+use Psyco\VehicularTraffic;
+use Psyco\Bus;
+use Psyco\Tesla;
+use Psyco\SportCar;
 
 $manager = new VehicularTraffic();
 
@@ -21,7 +21,7 @@ $manager->addVehicle($sportCar);
 echo "Starting all vehicles at 120 km/h:\n";
 $manager->startMovingAllVehicles(120);
 
-echo "\nElectric vehicles:\n";   //Investigacion
+echo "\nElectric vehicles:\n";
 foreach ($manager->getElectricVehicles() as $vehicle) {
     echo $vehicle->getModel() . " is moving electrically\n";
 }
